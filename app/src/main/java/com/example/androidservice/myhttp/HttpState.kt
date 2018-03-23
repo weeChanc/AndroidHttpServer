@@ -9,7 +9,7 @@ class HttpState() {
         val Not_Found_404 = "HTTP/1.1 404 Not Found\r\n"
         val OK_200 = "HTTP/1.1 200 OK\r\n"
         val Internal_Server_Error_500 = "HTTP/1.1 500 Internal Server Error\r\n"
-
+        val RangeOK_206 = "HTTP/1.1 206 OK\r\n"
         val FOUR_O_FOUR_HTML by lazy {
             """<!DOCTYPE html>
 <html>

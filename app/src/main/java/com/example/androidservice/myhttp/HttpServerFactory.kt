@@ -11,7 +11,7 @@ class HttpServerFactory {
 
         private val serverMapper: LinkedHashMap<Int, HttpServer> by lazy { LinkedHashMap<Int, HttpServer>() }
 
-        fun getHttpServer(app: Application, port: Int): HttpServer {
+        fun getHttpServer(port: Int): HttpServer {
             var server = serverMapper[port]
             if (server == null) {
                 server = HttpServer(port)

@@ -12,7 +12,7 @@ import java.util.regex.Pattern
 /**
  * Created by 铖哥 on 2018/3/22.
  */
-class HttpServer : IntentService("httpServer") {
+class Server : IntentService("httpServer") {
 
     override fun onHandleIntent(intent: Intent?) {
 
@@ -21,7 +21,7 @@ class HttpServer : IntentService("httpServer") {
     override fun onCreate() {
         super.onCreate()
 
-        val service = HttpServerFactory.getHttpServer(this.application,8080)
+        val service = HttpServerFactory.getHttpServer(8080)
         service.addHandler(MyHttpHandler())
         service.addHandler(MainHandler(getHostIp()+":8080"))
         service.start()
