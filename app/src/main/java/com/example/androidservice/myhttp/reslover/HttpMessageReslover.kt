@@ -1,6 +1,5 @@
 package com.example.androidservice.myhttp.reslover
 
-import com.example.androidservice.myhttp.`interface`.Reslover
 import com.example.androidservice.myhttp.reslover.reslovebean.RequestBody
 import com.example.androidservice.myhttp.reslover.reslovebean.RequestHeaders
 import com.example.androidservice.myhttp.reslover.reslovebean.RequestLine

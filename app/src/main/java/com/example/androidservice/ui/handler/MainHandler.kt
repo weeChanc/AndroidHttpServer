@@ -1,18 +1,19 @@
-package com.example.androidservice.ui
+package com.example.androidservice.ui.handler
 
-import android.content.Context
-import com.example.androidservice.R
 import com.example.androidservice.myhttp.HttpRequest
 import com.example.androidservice.myhttp.HttpResponse
 import com.example.androidservice.myhttp.`interface`.HttpHandler
 import com.example.androidservice.myhttp.annotaion.Http
+import com.example.androidservice.uitls.getHostIp
 import com.example.androidservice.uitls.writeTo
 
 /**
  * Created by 铖哥 on 2018/3/23.
  */
 @Http("/")
-class MainHandler(val ip : String) : HttpHandler{
+class MainHandler() : HttpHandler{
+
+    val ip : String = getHostIp()+":8080"
 
     val html = """
         <!DOCTYPE html>

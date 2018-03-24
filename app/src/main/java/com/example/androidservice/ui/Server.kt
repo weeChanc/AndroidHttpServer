@@ -3,6 +3,9 @@ package com.example.androidservice.ui
 import android.app.IntentService
 import android.content.Intent
 import com.example.androidservice.myhttp.HttpServerFactory
+import com.example.androidservice.ui.handler.MainHandler
+import com.example.androidservice.ui.handler.MediaHandler
+import com.example.androidservice.ui.handler.MyHttpHandler
 import java.net.InetAddress
 import java.net.NetworkInterface
 import java.net.SocketException
@@ -22,8 +25,9 @@ class Server : IntentService("httpServer") {
         super.onCreate()
 
         val service = HttpServerFactory.getHttpServer(8080)
-        service.addHandler(MyHttpHandler())
-        service.addHandler(MainHandler(getHostIp()+":8080"))
+        service.addHandler(MyHttpHandler::class.java)
+        service.addHandler(MainHandler::class.java)
+        service.addHandler(MediaHandler::class.java)
         service.start()
     }
 

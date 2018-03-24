@@ -1,4 +1,4 @@
-package com.example.androidservice.ui
+package com.example.androidservice.ui.handler
 
 import com.example.androidservice.myhttp.annotaion.Http
 import com.example.androidservice.myhttp.`interface`.HttpHandler
