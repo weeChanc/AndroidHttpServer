@@ -6,6 +6,20 @@ simple service + simple demo
 一个利用Kotlin语言编写的简易的Android嵌入式Http服务器,可以处理GET,POST请求,支持form-data,x-www-urlencoded表单解析,
 支持直接访问Android手机所有文件并且支持断点续传
 
+加入依赖
+Step 1. Add the JitPack repository to your build file
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+
+Step 2. Add the dependency
+dependencies {
+	        compile 'com.github.weeChanc:AndroidService:0.1'
+	}
+
 使用方法
 1.在应用程序根包名下创建一个包叫做handler
 2.在该包下创建Handler
