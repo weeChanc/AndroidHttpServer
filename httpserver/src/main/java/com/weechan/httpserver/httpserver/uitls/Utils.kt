@@ -1,4 +1,4 @@
-package com.example.androidservice.uitls
+package com.weechan.httpserver.httpserver.uitls
 
 import android.text.TextUtils
 import android.webkit.MimeTypeMap

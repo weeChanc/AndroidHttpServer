@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/AndroidService.iml" filepath="$PROJECT_DIR$/.idea/AndroidService.iml" />
       <module fileurl="file://$PROJECT_DIR$/AndroidService.iml" filepath="$PROJECT_DIR$/AndroidService.iml" />
+      <module fileurl="file://F:\study\Androidworkspace\android-architecture-dev-todo-mvvm-live-kotlin\AndroidService\.idea\AndroidService.iml" filepath="F:\study\Androidworkspace\android-architecture-dev-todo-mvvm-live-kotlin\AndroidService\.idea\AndroidService.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/httpserver/httpserver.iml" filepath="$PROJECT_DIR$/httpserver/httpserver.iml" />
     </modules>
   </component>
 </project>
