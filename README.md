@@ -1,7 +1,7 @@
 # EasyHttpServer
 simple service + simple demo
 
-[![](https://jitpack.io/v/weeChanc/AndroidService.svg)](https://jitpack.io/#weeChanc/AndroidService)
+[![image](https://jitpack.io/v/weeChanc/AndroidService.svg)](https://jitpack.io/#weeChanc/AndroidService)
 
 一个利用Kotlin语言编写的简易的Android嵌入式Http服务器,可以处理GET,POST请求,支持form-data,x-www-urlencoded表单解析,
 支持直接访问Android手机所有文件并且支持断点续传
