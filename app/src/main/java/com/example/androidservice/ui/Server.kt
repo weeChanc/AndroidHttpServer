@@ -21,7 +21,6 @@ class Server : Service() {
         super.onCreate()
 
         val service = HttpServerFactory
-                .handlerPackage("handler")
                 .with(this)
                 .getHttpServer(8080)
 

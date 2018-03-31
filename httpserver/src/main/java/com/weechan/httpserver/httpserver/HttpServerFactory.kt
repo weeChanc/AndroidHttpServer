@@ -13,7 +13,7 @@ class HttpServerFactory {
     companion object {
 
         private val serverMapper: LinkedHashMap<Int, HttpServer> by lazy { LinkedHashMap<Int, HttpServer>() }
-        private var handlerPackage = ""
+        private var handlerPackage = "handler"
         private lateinit var handlerClassList: List<Class<*>>
         private fun tryAs(clazz: Class<*>):Class<HttpHandler>?{
             var var0:Class<HttpHandler>? = null
@@ -25,7 +25,7 @@ class HttpServerFactory {
             return var0
         }
         fun with(context: Context): Companion {
-            if (handlerPackage == "") throw RuntimeException("need to invoke handlerPackage(string) first")
+            if (handlerPackage == "") throw RuntimeException("need to invoke setup handlerPackage")
             handlerClassList = getClassesInPackage(handlerPackage, context)
             return this
         }
