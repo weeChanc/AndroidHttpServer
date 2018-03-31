@@ -41,7 +41,11 @@ class HttpServer constructor(val port: Int) {
         } catch (e: Exception) {
             return false
         }
+        execute()
+        return true
+    }
 
+    fun execute(){
         pool.execute {
             try{
                 while (true) {
@@ -53,8 +57,20 @@ class HttpServer constructor(val port: Int) {
                 Log.e("HttpServer", "shutdown")
             }
         }
+    }
 
-        return true
+    fun startAuto(start : Int) : Int{
+        while(start <= 65535){
+            try {
+                serverSocket = ServerSocket(port)
+            } catch (e: Exception) {
+                continue
+            }
+            execute()
+            return start
+        }
+
+        return -1
     }
 
     inner class MessageDispatcher(val socket: Socket) : Runnable {

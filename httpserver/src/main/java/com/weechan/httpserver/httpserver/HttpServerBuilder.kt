@@ -35,8 +35,6 @@ class HttpServerBuilder {
             return this
         }
 
-
-
         fun encode(charSet : Charset){
             this.encodeCharset = charSet.name()
         }

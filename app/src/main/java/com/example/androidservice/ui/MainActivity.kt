@@ -17,16 +17,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-
-        textView.text = getHostIp()+":8080  tempFile${Environment.getExternalStorageDirectory().path}"
         MediaRepository.init()
         val service = HttpServerBuilder
                 .with(this)
                 .port(8080)
                 .getHttpServer()
 
-        service.start()
+        val port = service.startAuto(8080)
+        textView.text = getHostIp()+":${port}  tempFile${Environment.getExternalStorageDirectory().path}"
+
 
         open.setOnClickListener { Log.e("MainActivity", service.start().toString()) }
         stop.setOnClickListener{ Log.e("MainActivity", service.stop().toString())}
