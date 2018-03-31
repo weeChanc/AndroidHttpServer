@@ -1,4 +1,4 @@
-package com.weechan.httpserver.httpserver.annotaion
+package com.weechan.httpserver.httpserver.annotaions
 
 /**
  * Created by 铖哥 on 2018/3/17.

@@ -1,8 +1,8 @@
 package com.weechan.httpserver.httpserver
 
 import android.util.Log
-import com.weechan.httpserver.httpserver.annotaion.Http
-import com.weechan.httpserver.httpserver.`interface`.HttpHandler
+import com.weechan.httpserver.httpserver.annotaions.Http
+import com.weechan.httpserver.httpserver.interfaces.HttpHandler
 import com.example.androidservice.httpserver.reslover.HttpMessageReslover
 import com.weechan.httpserver.httpserver.uitls.writeTo
 import java.io.*

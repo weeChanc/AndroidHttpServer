@@ -1,6 +1,6 @@
 package com.weechan.httpserver.httpserver
 
-import com.weechan.httpserver.httpserver.`interface`.Response
+import com.weechan.httpserver.httpserver.interfaces.Response
 import java.io.OutputStream
 
 /**

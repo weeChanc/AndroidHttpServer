@@ -1,13 +1,12 @@
 package com.example.androidservice.handler
 
 
-import android.util.Log
 import com.example.androidservice.uitls.getHostIp
 import com.example.androidservice.uitls.writeTo
 import com.weechan.httpserver.httpserver.HttpRequest
 import com.weechan.httpserver.httpserver.HttpResponse
-import com.weechan.httpserver.httpserver.`interface`.HttpHandler
-import com.weechan.httpserver.httpserver.annotaion.Http
+import com.weechan.httpserver.httpserver.interfaces.HttpHandler
+import com.weechan.httpserver.httpserver.annotaions.Http
 
 /**
  * Created by 铖哥 on 2018/3/23.

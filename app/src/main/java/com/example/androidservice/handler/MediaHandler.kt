@@ -6,8 +6,8 @@ import com.example.androidservice.uitls.writeTo
 import com.google.gson.Gson
 import com.weechan.httpserver.httpserver.HttpRequest
 import com.weechan.httpserver.httpserver.HttpResponse
-import com.weechan.httpserver.httpserver.`interface`.HttpHandler
-import com.weechan.httpserver.httpserver.annotaion.Http
+import com.weechan.httpserver.httpserver.interfaces.HttpHandler
+import com.weechan.httpserver.httpserver.annotaions.Http
 import java.io.InputStream
 
 /**

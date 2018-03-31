@@ -1,4 +1,4 @@
-package com.weechan.httpserver.httpserver.`interface`
+package com.weechan.httpserver.httpserver.interfaces
 
 import com.weechan.httpserver.httpserver.HttpRequest
 import com.weechan.httpserver.httpserver.HttpResponse

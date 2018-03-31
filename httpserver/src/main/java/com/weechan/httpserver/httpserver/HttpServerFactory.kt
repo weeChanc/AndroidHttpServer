@@ -1,8 +1,7 @@
 package com.weechan.httpserver.httpserver
 
 import android.content.Context
-import android.util.Log
-import com.weechan.httpserver.httpserver.`interface`.HttpHandler
+import com.weechan.httpserver.httpserver.interfaces.HttpHandler
 import com.weechan.httpserver.httpserver.uitls.getClassesInPackage
 
 /**
