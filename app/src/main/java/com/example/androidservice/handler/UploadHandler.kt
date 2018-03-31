@@ -29,7 +29,7 @@ class  UploadHandler : HttpHandler{
                 out.write(buf,0,length)
                 length = input.read(buf)
             }
-//            out.flush()
+            out.flush()
             input.close()
         }
         response.write { write("上传成功 ${Environment.getExternalStorageDirectory().path+"/${part?.fileName}"} ".toByteArray()) }

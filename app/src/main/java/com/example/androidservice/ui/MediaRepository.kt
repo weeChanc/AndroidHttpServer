@@ -51,7 +51,7 @@ class MediaRepository {
 
             val list = mutableListOf<FileInfo>()
 
-            cursor.moveToFirst()
+            if (cursor != null && cursor.moveToFirst() && cursor.count > 0)
             do {
                 var initSize = (cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.SIZE))).toLong()
                 val name = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.TITLE))
@@ -59,8 +59,6 @@ class MediaRepository {
                 if (initSize == 0L) initSize = File(location).length()
                 val info = FileInfo(name, location, initSize)
                 list.add(info)
-
-
             } while (cursor.moveToNext())
 
             cursor.close()
@@ -91,7 +89,7 @@ class MediaRepository {
 
 
 
-            if (cursor != null && cursor.moveToFirst()) {
+            if (cursor != null && cursor.moveToFirst() && cursor.count > 0) {
                 do {
                     val location = cursor.getString(cursor.getColumnIndex(MediaStore.Files.FileColumns.DATA))
                     val initSize = java.lang.Long.parseLong(cursor.getString(cursor.getColumnIndex(MediaStore.Files.FileColumns.SIZE)))
@@ -123,7 +121,7 @@ class MediaRepository {
 
 
 
-            if (cursor != null && cursor.moveToFirst()) {
+            if (cursor != null && cursor.moveToFirst() && cursor.count > 0) {
                 do {
                     val location = cursor.getString(cursor.getColumnIndex(MediaStore.Video.VideoColumns.DATA))
                     val id = java.lang.Long.valueOf(cursor.getString(cursor.getColumnIndex(MediaStore.Video.VideoColumns._ID)))
@@ -153,7 +151,7 @@ class MediaRepository {
 
 
 
-            if (cursor != null && cursor.moveToFirst()) {
+            if (cursor != null && cursor.moveToFirst() && cursor.count > 0) {
                 do {
 
                     val location = cursor.getString(cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA))

@@ -14,9 +14,10 @@ class HttpMessageReslover {
 
     companion object {
 
-        fun reslove(ins: DataInputStream): RequestMessage {
+        fun reslove(ins: DataInputStream): RequestMessage? {
 
-            val firstLine = ins.readLine()
+            val firstLine = ins.readLine() ?: return null
+
             val headers = StringBuffer()
 
             var tempStr = ins.readLine()
@@ -25,6 +26,7 @@ class HttpMessageReslover {
                 headers.append(tempStr + "\r\n")
                 tempStr = ins.readLine()
             }
+
 
             val requestLine = RequestLine(URLDecoder.decode(firstLine, "utf-8"))
             val requestHeaders = RequestHeaders(headers.toString())
