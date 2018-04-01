@@ -34,6 +34,12 @@ class HttpServer constructor(val port: Int) {
         serverSocket?.close()
     }
 
+    fun destory(){
+        serverSocket?.close()
+        pool.shutdown()
+        routerMapper.clear()
+    }
+
     fun start(): Boolean {
 
         try {
@@ -45,7 +51,7 @@ class HttpServer constructor(val port: Int) {
         return true
     }
 
-    fun execute(){
+    private fun execute(){
         pool.execute {
             try{
                 while (true) {
@@ -60,14 +66,16 @@ class HttpServer constructor(val port: Int) {
     }
 
     fun startAuto(start : Int) : Int{
-        while(start <= 65535){
+        var from = start
+        while(from <= 65535){
             try {
-                serverSocket = ServerSocket(port)
+                serverSocket = ServerSocket(from)
             } catch (e: Exception) {
+                from++
                 continue
             }
             execute()
-            return start
+            return from
         }
 
         return -1
@@ -103,7 +111,6 @@ class HttpServer constructor(val port: Int) {
                 }
 
             } catch (e: Exception) {
-
                 e.printStackTrace()
             } finally {
                 input.close()

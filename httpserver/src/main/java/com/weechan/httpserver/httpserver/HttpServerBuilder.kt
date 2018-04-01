@@ -15,9 +15,9 @@ class HttpServerBuilder {
         private var handlerPackage = "handler"
         private lateinit var handlerClassList: List<Class<*>>
         private var port = 8080
+        private var path: String? = null
         private var encodeCharset: String = "UTF-8"
         private var decodeCharset: String = "UTF-8"
-
 
         fun with(context: Context): Companion {
             if (handlerPackage == "") throw RuntimeException("need to invoke setup handlerPackage")
@@ -49,6 +49,12 @@ class HttpServerBuilder {
                 server.addHandler(tryAs(clazz))
             }
             return server
+        }
+
+
+
+        fun tempFilePath(path:String){
+            this.path = path
         }
 
         private fun tryAs(clazz: Class<*>): Class<HttpHandler>? {

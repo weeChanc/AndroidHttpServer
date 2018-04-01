@@ -23,12 +23,10 @@ class MainActivity : AppCompatActivity() {
                 .port(8080)
                 .getHttpServer()
 
-        val port = service.startAuto(8080)
+        val port = service.start()
         textView.text = getHostIp()+":${port}  tempFile${Environment.getExternalStorageDirectory().path}"
 
 
-        open.setOnClickListener { Log.e("MainActivity", service.start().toString()) }
-        stop.setOnClickListener{ Log.e("MainActivity", service.stop().toString())}
 
     }
 
