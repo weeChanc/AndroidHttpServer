@@ -58,3 +58,11 @@ class MainHandler() : HttpHandler {
 4.打开浏览器访问手机IP(保证在同一局域网内)
 
 其他例子可查看代码
+
+
+
+# 计划
+添加HTTP1.1长连接支持
+添加蓝牙与wifi同传功能
+重构
+
