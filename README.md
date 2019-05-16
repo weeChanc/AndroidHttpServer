@@ -61,8 +61,8 @@ class MainHandler() : HttpHandler {
 
 
 
-# 计划
-添加HTTP1.1长连接支持
-添加蓝牙与wifi同传功能
-重构
+# 计划 10 月份
+*添加HTTP1.1长连接支持
+*添加蓝牙与wifi同传功能
+*重构
 
