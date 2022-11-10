@@ -2,11 +2,11 @@ package com.weechan.httpserver.httpserver.uitls
 
 import android.text.TextUtils
 import android.webkit.MimeTypeMap
-import java.io.File
-import java.io.IOException
 import java.io.InputStream
 import java.io.OutputStream
-import java.net.*
+import java.net.InetAddress
+import java.net.NetworkInterface
+import java.net.SocketException
 import java.util.*
 import java.util.regex.Pattern
 
@@ -87,7 +87,7 @@ fun getMimeType(path: String): String {
     if (!TextUtils.isEmpty(path)) {
         val extension = MimeTypeMap.getFileExtensionFromUrl(path)
         if (MimeTypeMap.getSingleton().hasExtension(extension))
-            mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension)
+            mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension).toString()
     }
     return mimeType
 }

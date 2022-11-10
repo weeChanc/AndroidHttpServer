@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AndroidService.iml" filepath="$PROJECT_DIR$/AndroidService.iml" />
-      <module fileurl="file://F:\study\Androidworkspace\android-architecture-dev-todo-mvvm-live-kotlin\AndroidService\.idea\AndroidService.iml" filepath="F:\study\Androidworkspace\android-architecture-dev-todo-mvvm-live-kotlin\AndroidService\.idea\AndroidService.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/httpserver/httpserver.iml" filepath="$PROJECT_DIR$/httpserver/httpserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidHttpServer.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidHttpServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidHttpServer.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidHttpServer.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidHttpServer.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidHttpServer.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidHttpServer.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidHttpServer.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidHttpServer.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidHttpServer.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/httpserver/AndroidHttpServer.httpserver.iml" filepath="$PROJECT_DIR$/.idea/modules/httpserver/AndroidHttpServer.httpserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/httpserver/AndroidHttpServer.httpserver.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/httpserver/AndroidHttpServer.httpserver.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/httpserver/AndroidHttpServer.httpserver.main.iml" filepath="$PROJECT_DIR$/.idea/modules/httpserver/AndroidHttpServer.httpserver.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/httpserver/AndroidHttpServer.httpserver.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/httpserver/AndroidHttpServer.httpserver.unitTest.iml" />
     </modules>
   </component>
 </project>

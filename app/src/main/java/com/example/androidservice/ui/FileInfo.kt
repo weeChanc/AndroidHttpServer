@@ -21,8 +21,8 @@ data class FileInfo(val name: String,
 
 
     constructor(parcel: Parcel) : this(
-            parcel.readString(),
-            parcel.readString(),
+            parcel.readString().toString(),
+            parcel.readString().toString(),
             parcel.readLong(),
             parcel.readLong()) {
     }
