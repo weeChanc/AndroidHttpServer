@@ -1,10 +1,9 @@
 package com.example.androidservice.ui
 
+import android.annotation.SuppressLint
 import android.content.ContentResolver
 import android.provider.MediaStore
-
 import java.io.File
-import java.util.stream.Stream
 import kotlin.concurrent.thread
 
 /**
@@ -50,7 +49,7 @@ class MediaRepository {
 
 
             val list = mutableListOf<FileInfo>()
-
+            @SuppressLint("Range")
             if (cursor != null && cursor.moveToFirst() && cursor.count > 0)
             do {
                 var initSize = (cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.SIZE))).toLong()
@@ -61,7 +60,7 @@ class MediaRepository {
                 list.add(info)
             } while (cursor.moveToNext())
 
-            cursor.close()
+            cursor?.close()
 
 
 
@@ -88,7 +87,7 @@ class MediaRepository {
             val cursor = mContentResolver.query(MediaStore.Files.getContentUri("external"), projection, selection, selectionArgs, MediaStore.Files.FileColumns.DATE_MODIFIED + " desc")
 
 
-
+            @SuppressLint("Range")
             if (cursor != null && cursor.moveToFirst() && cursor.count > 0) {
                 do {
                     val location = cursor.getString(cursor.getColumnIndex(MediaStore.Files.FileColumns.DATA))
@@ -106,6 +105,7 @@ class MediaRepository {
             return list
         }
 
+
         @Synchronized
         fun getVideo(): List<FileInfo> {
 
@@ -120,7 +120,7 @@ class MediaRepository {
                     null, null, MediaStore.Video.VideoColumns.DATE_MODIFIED + "  desc")
 
 
-
+            @SuppressLint("Range")
             if (cursor != null && cursor.moveToFirst() && cursor.count > 0) {
                 do {
                     val location = cursor.getString(cursor.getColumnIndex(MediaStore.Video.VideoColumns.DATA))
@@ -150,7 +150,7 @@ class MediaRepository {
                     arrayOf(MediaStore.Images.ImageColumns.DATA), null, null, MediaStore.Images.ImageColumns.DATA + "  desc")
 
 
-
+            @SuppressLint("Range")
             if (cursor != null && cursor.moveToFirst() && cursor.count > 0) {
                 do {
 
@@ -159,7 +159,7 @@ class MediaRepository {
                     addPath.add(parentPath)
                 } while (cursor.moveToNext())
             }
-            cursor.close()
+            cursor?.close()
 
             addPath.forEach {
 
@@ -177,7 +177,11 @@ class MediaRepository {
         fun getPhotos(path: String?): List<FileInfo>? {
             if(path == null) return null
             val list = mutableListOf<FileInfo>()
-            list.addAll(File(path).listFiles().filter { it.isFile }.map { FileInfo(it.name, it.path, it.length()) })
+            File(path).listFiles()?.filter { it.isFile }?.let {
+                list.addAll(
+                    it
+                        .map { FileInfo(it.name, it.path, it.length()) })
+            }
             return list
         }
 

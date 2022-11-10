@@ -4,6 +4,7 @@ import android.content.Context
 import com.weechan.httpserver.httpserver.interfaces.HttpHandler
 import com.weechan.httpserver.httpserver.uitls.getClassesInPackage
 import java.nio.charset.Charset
+import javax.net.ServerSocketFactory
 
 /**
  * Created by 铖哥 on 2018/3/19.
@@ -19,14 +20,22 @@ class HttpServerBuilder {
         private var encodeCharset: String = "UTF-8"
         private var decodeCharset: String = "UTF-8"
 
+        private var serverSocketFactory: ServerSocketFactory = ServerSocketFactory.getDefault()
+
+
         fun with(context: Context): Companion {
             if (handlerPackage == "") throw RuntimeException("need to invoke setup handlerPackage")
             handlerClassList = getClassesInPackage(handlerPackage, context)
             return this
         }
 
-        fun handlerPackage(var0: String): Companion {
-            handlerPackage = var0
+        fun socketFactory(socketFactory: ServerSocketFactory): Companion {
+            this.serverSocketFactory = socketFactory
+            return this
+        }
+
+        fun handlerPackage(pkg: String): Companion {
+            handlerPackage = pkg
             return this
         }
 
@@ -35,16 +44,16 @@ class HttpServerBuilder {
             return this
         }
 
-        fun encode(charSet : Charset){
+        fun encode(charSet: Charset) {
             this.encodeCharset = charSet.name()
         }
 
-        fun decode(charSet : Charset){
+        fun decode(charSet: Charset) {
             this.decodeCharset = charSet.name()
         }
 
         fun getHttpServer(): HttpServer {
-            val server = HttpServer(port)
+            val server = HttpServer(port, serverSocketFactory)
             for (clazz in handlerClassList) {
                 server.addHandler(tryAs(clazz))
             }
@@ -52,8 +61,7 @@ class HttpServerBuilder {
         }
 
 
-
-        fun tempFilePath(path:String){
+        fun tempFilePath(path: String) {
             this.path = path
         }
 

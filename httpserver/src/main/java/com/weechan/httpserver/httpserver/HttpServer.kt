@@ -10,13 +10,14 @@ import java.io.*
 import java.net.*
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
+import javax.net.ServerSocketFactory
 import kotlin.concurrent.thread
 
 
 /**
  * Created by 铖哥 on 2018/3/17.
  */
-class HttpServer constructor(val port: Int) {
+class HttpServer constructor(val port: Int,val serverSocketFactory: ServerSocketFactory) {
 
     private val pool: ExecutorService by lazy { Executors.newCachedThreadPool() }
     private val routerMapper = mutableMapOf<String, Class<*>>()
@@ -43,7 +44,7 @@ class HttpServer constructor(val port: Int) {
     fun start(): Boolean {
 
         try {
-            serverSocket = ServerSocket(port)
+            serverSocket = serverSocketFactory.createServerSocket(port)//ServerSocket(port)
         } catch (e: Exception) {
             return false
         }
@@ -69,7 +70,7 @@ class HttpServer constructor(val port: Int) {
         var from = start
         while(from <= 65535){
             try {
-                serverSocket = ServerSocket(from)
+                serverSocket = serverSocketFactory.createServerSocket(port)//ServerSocket(from)
             } catch (e: Exception) {
                 from++
                 continue
